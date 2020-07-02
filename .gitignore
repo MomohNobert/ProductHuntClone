@@ -14,7 +14,7 @@ media
 
 .idea/sonarlint/
 .idea/vcs.xml
-/djangoPortfolio/settings.py
+/productHunter/settings.py
 media
 /static
 
