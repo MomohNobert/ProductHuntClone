@@ -12,4 +12,6 @@ def login(request):
 
 
 def logout(request):
-    return render(request, 'user/logout.html')
+    # TODO Need to route to homepage
+    # don't forget logout
+    return render(request, 'user/signup.html')
