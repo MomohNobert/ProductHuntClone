@@ -19,7 +19,11 @@
     </div>
     <div class="col-4">
         <div class="col-10">
-            <a href=""><button class="btn btn-primary btn-lg btn-block">Upvote {{ product.votes_total }}</button></a>
+            <a href="javascript:{document.getElementById('upvote').submit()}"><button class="btn btn-primary btn-lg btn-block">Upvote {{ product.votes_total }}</button></a>
+            <form id="upvote" method="POST" action="{% url 'upvote' product.id %}">
+                {% csrf_token %}
+                <input type="hidden">
+            </form>
         </div>
     </div>
 </div>
@@ -37,6 +41,7 @@
         <p>{{ product.body }}</p>
     </div>
 </div>
+
 
 
 {% endblock %}
