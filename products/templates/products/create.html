@@ -1,10 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block content %}
+    <h1>Create</h1>
+
+    <form method="POST" action="{% url 'create' %}" enctype='multipart/form-data'>
+    {% csrf_token %}
+        {% if error %}
+        <p class="cl-red">{{error}}</p>
+        <br />
+        {% endif %}
+        Title:
+        <br/>
+        <input type="text" name="title">
+        <br />
+        Body:
+        <br/>
+        <input type="textbox" name="body">
+        <br />
+        URL:
+        <br/>
+        <input type="textbox" name="url">
+        <br />
+        Icon:
+        <br/>
+        <input type="file" name="icon">
+        <br />
+        Image
+        <br/>
+        <input type="file" name="image">
+        <br />
+        <br />
+        <input class="btn btn-dark btn-primary" type="submit" value="Add Product" />
+    </form>
+{% endblock %}
